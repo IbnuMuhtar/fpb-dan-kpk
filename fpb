@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b, fpb;
+    cout << "Masukkan dua bilangan: ";
+    cin >> a >> b;
+
+    // mencari fpb dengan algoritma Euclidean
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+
+    fpb = a;
+
+    cout << "FPB dari " << a << " dan " << b << " adalah " << fpb;
+    return 0;
+}
