@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+// Fungsi untuk menghitung FPB
+int fpb(int a, int b) {
+    while (b != 0) {
+        int r = a % b;
+        a = b;
+        b = r;
+    }
+    return a;
+}
+
+// Fungsi untuk menghitung KPK
+int kpk(int a, int b) {
+    return (a*b) / fpb(a, b);
+}
+
+int main() {
+    // Input dua bilangan
+    int a, b;
+    cout << "Masukkan dua bilangan: ";
+    cin >> a >> b;
+
+    // Hitung dan tampilkan hasil FPB dan KPK
+    cout << "FPB dari " << a << " dan " << b << " adalah " << fpb(a, b) << endl;
+    cout << "KPK dari " << a << " dan " << b << " adalah " << kpk(a, b) << endl;
+
+    return 0;
+}
