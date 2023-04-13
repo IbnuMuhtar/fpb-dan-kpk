@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b, kpk;
+    cout << "Masukkan dua bilangan: ";
+    cin >> a >> b;
+
+    // mencari kpk dengan memanfaatkan fpb
+    int temp = a > b ? a : b;
+    while (true) {
+        if (temp % a == 0 && temp % b == 0) {
+            kpk = temp;
+            break;
+        }
+        temp++;
+    }
+
+    cout << "KPK dari " << a << " dan " << b << " adalah " << kpk;
+    return 0;
+}
